@@ -183,8 +183,8 @@ public class BaseTest {
 	// for Mac. Update the paths as per your Mac setup
 	public AppiumDriverLocalService getAppiumService() {
 		HashMap<String, String> environment = new HashMap<String, String>();
-		environment.put("PATH", "enter_your_path_here" + System.getenv("PATH"));
-		environment.put("ANDROID_HOME", "enter_android_home_path");
+		environment.put("PATH", System.getenv("PATH"));
+		environment.put("ANDROID_HOME", "~/Library/Android/sdk ");
 		return AppiumDriverLocalService.buildService(new AppiumServiceBuilder()
 				.usingDriverExecutable(new File("/usr/local/bin/node"))
 				.withAppiumJS(new File("/usr/local/lib/node_modules/appium/build/lib/main.js"))
